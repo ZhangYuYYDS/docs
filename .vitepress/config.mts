@@ -1,52 +1,106 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
-  base: "/docs/",
+  title: "Notes",
+  srcDir: 'src',
   lastUpdated: true,
-  outDir:"docs",
+  cleanUrls: true,
+  outDir: "docs",
+  base: "/docs/",
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: 'https://api.iconify.design/dinkie-icons:cat-face-small.svg' }],
+  ],
   themeConfig: {
+    logo: 'https://api.iconify.design/openmoji:hacker-cat.svg',
     search: {
       provider: 'local',
-    },
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: 'js',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ]
-      },
-      {
-        text: 'node',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-          { text: 'useState', link: '/react/hooks/usaState' }
-        ]
-      },
-      {
-        text: 'react',
-        items: [
-          {
-            text: 'hooks', items: [
-              { text: 'useState', link: '/src/react/hooks/usaState' }
-            ]
+      options: {
+        translations: {
+          button: { buttonText: 'Search', buttonAriaLabel: 'Search' },
+          modal: {
+            noResultsText: 'No results for',
+            footer: { selectText: 'to select', navigateText: 'to navigate', closeText: 'to close' },
           },
-        ]
-      }
+        },
+      },
+    },
+
+    // ==================== 顶部导航栏 ====================
+    nav: [
+      { text: 'home', link: '/' },
     ],
 
+    // ==================== 多侧边栏配置 ====================
+    sidebar: {
+      '/javascript/': [
+        {
+          text: 'Documentation',
+        },
+      ],
+      '/typescript/': [
+        {
+          text: 'Documentation',
+        },
+      ],
+      '/react/': [
+        {
+          text: 'Documentation',
+          items: [
+            {
+              text: 'Hooks',
+              collapsed: false,
+              items: [
+                { text: 'useState', link: '/react/hooks/useState' },
+                { text: 'useEffect', link: '/react/hooks/useEffect' },
+                { text: 'useRef', link: '/react/hooks/useRef' },
+                { text: 'useMemo', link: '/react/hooks/useMemo' },
+                { text: 'useCallback', link: '/react/hooks/useCallback' },
+                { text: '自定义 Hooks', link: '/react/hooks/custom-hooks' },
+              ]
+            },
+          ],
+        },
+      ],
+      '/vue/': [
+        {
+          text: 'Documentation',
+        },
+      ],
+    },
+
+    // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
+      { icon: 'github', link: 'https://github.com/ZhangYuYYDS/docs' },
+    ],
+
+    // 页脚
+    footer: {
+      message: "好记性不如烂笔头",
+      copyright: `Copyright © ${new Date().getFullYear()}`,
+    },
+
+    // 文档页脚导航文本
+    docFooter: {
+      prev: 'Previous Page',
+      next: 'Next Page',
+    },
+
+    // 大纲配置
+    outline: {
+      label: 'On this page',
+      level: [2, 3],
+    },
+
+    // 最后更新时间
+    lastUpdated: {
+      text: 'Last updated',
+    },
+
+    // 编辑链接
+    editLink: {
+      pattern: 'https://github.com/ZhangYuYYDS/docs/:path',
+      text: 'Suggest changes to this page',
+    },
+    externalLinkIcon: true,
+  },
 })
