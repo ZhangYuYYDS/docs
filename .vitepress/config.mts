@@ -58,6 +58,13 @@ export default defineConfig({
                 { text: '自定义 Hooks', link: '/react/hooks/custom-hooks' },
               ]
             },
+            {
+              text: 'Component',
+              collapsed: false,
+              items: [
+                { text: '组件通讯方式', link: '/react/components/commService' },
+              ]
+            },
           ],
         },
       ],
