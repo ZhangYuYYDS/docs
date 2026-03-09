@@ -63,6 +63,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: '组件通讯方式', link: '/react/components/commService' },
+                { text: '受控组件与非受控组件', link: '/react/components/controlledComponent' },
               ]
             },
           ],
