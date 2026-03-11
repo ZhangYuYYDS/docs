@@ -70,6 +70,7 @@ export default defineConfig({
                 { text: "模式", link: "/react/router/dataRouter" },
                 { text: "路由", link: "/react/router/router" },
                 { text: "传参", link: "/react/router/params" },
+                { text: "懒加载", link: "/react/router/lazy" },
               ],
             },
           ],
