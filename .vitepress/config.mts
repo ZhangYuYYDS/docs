@@ -71,6 +71,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: '模式', link: '/react/router/dataRouter' },
+                { text: '路由', link: '/react/router/router' },
               ]
             },
           ],
