@@ -66,6 +66,13 @@ export default defineConfig({
                 { text: '受控组件与非受控组件', link: '/react/components/controlledComponent' },
               ]
             },
+            {
+              text: 'router',
+              collapsed: false,
+              items: [
+                { text: '模式', link: '/react/router/dataRouter' },
+              ]
+            },
           ],
         },
       ],
