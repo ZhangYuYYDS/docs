@@ -31,6 +31,7 @@ export default defineConfig({
       "/javascript/": [
         {
           text: "Documentation",
+          items: [{ text: "this", link: "/javascript/this" }],
         },
       ],
       "/typescript/": [
@@ -79,6 +80,13 @@ export default defineConfig({
       "/vue/": [
         {
           text: "Documentation",
+          items: [
+            {
+              text: "原理篇",
+              collapsed: false,
+              items: [{ text: "响应式", link: "/vue/analysis/reactivity" }],
+            },
+          ],
         },
       ],
     },
